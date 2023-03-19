@@ -1,17 +1,15 @@
 import { BiMessageSquareAdd } from 'react-icons/bi';
 
-const Form = () => {
-  const inputTextHandler = ({ setInputText, inputText }) => {
-    const inputTextHandler = (event) => {
-      console.log(event.target.value);
-      setInputText(event.target.value);
-    };
+const Form = ({ inputText, setInputText, todos, setTodos }) => {
+  const inputTextHandler = (event) => {
+    console.log(event.target.value);
+    setInputText(event.target.value);
   };
 
   const submitTodo = (event) => {
     event.preventDefault();
     setTodos([
-      ...TodoList,
+      ...todos,
       { text: inputText, completed: false, id: Math.random() * 999 },
     ]);
 
@@ -20,9 +18,9 @@ const Form = () => {
 
   return (
     <form>
-      <input className="todo-input" type="text" onChange={inputTextHandler}/>
+      <input className="todo-input" type="text" value={inputText} onChange={inputTextHandler}/>
 
-      <button type="submit" className="todo-button">
+      <button type="submit" className="todo-button" onClick={submitTodo}>
         <BiMessageSquareAdd/>
       </button>
 

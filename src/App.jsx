@@ -14,7 +14,7 @@ function App() {
   return (<div className="App">
     <div className="container">
       <header>ToDoList</header>
-      <Form inputText={inputText} setInputText={setInputText}/>
+      <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos}/>
       <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   </div>);
