@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
   const inputTextHandler = (event) => {
     console.log(event.target.value);
-    setInputText(event.target.value);
+    setInputText(event.target.value.trim());
   };
 
   const submitTodo = (event) => {
