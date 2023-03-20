@@ -1,4 +1,5 @@
 import { BiMessageSquareAdd } from 'react-icons/bi';
+import PropTypes from 'prop-types';
 
 const Form = ({ inputText, setInputText, todos, setTodos }) => {
   const inputTextHandler = (event) => {
@@ -8,31 +9,35 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
 
   const submitTodo = (event) => {
     event.preventDefault();
-    setTodos([
-      ...todos,
-      { text: inputText, completed: false, id: Math.random() * 999 },
-    ]);
+    setTodos([...todos, { text: inputText, completed: false, id: Math.random() * 999 }]);
 
     setInputText('');
   };
 
   return (
     <form>
-      <input className="todo-input" type="text" value={inputText} onChange={inputTextHandler}/>
+      <input className='todo-input' type='text' value={inputText} onChange={inputTextHandler} />
 
-      <button type="submit" className="todo-button" onClick={submitTodo}>
-        <BiMessageSquareAdd/>
+      <button type='submit' className='todo-button' onClick={submitTodo}>
+        <BiMessageSquareAdd />
       </button>
 
-      <div className="select">
-        <select name="todos">
-          <option value="all">全部</option>
-          <option value="completed">已完成</option>
-          <option value="uncompleted">待完成</option>
+      <div className='select'>
+        <select name='todos'>
+          <option value='all'>全部</option>
+          <option value='completed'>已完成</option>
+          <option value='uncompleted'>待完成</option>
         </select>
       </div>
     </form>
   );
+};
+
+Form.propTypes = {
+  inputText: PropTypes.string,
+  setInputText: PropTypes.func,
+  todos: PropTypes.array,
+  setTodos: PropTypes.func,
 };
 
 export default Form;
