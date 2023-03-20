@@ -1,38 +1,4 @@
-import { MdCheck, MdDeleteOutline } from 'react-icons/md';
-
-const TodoItem = ({ todos, setTodos, text, todo }) => {
-  const completeTodo = () => {
-    setTodos(
-      todos.map((item) => {
-        if (item.id === todo.id) {
-          return {
-            // text: item.text,
-            // id: item.id,
-            ...item,
-            completed: !item.completed,
-          };
-        }
-
-        return item;
-      })
-    );
-  };
-
-  return (
-    <div className="todo">
-      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-        {text}
-      </li>
-
-      <button className="complete-btn" onClick={completeTodo}>
-        <MdCheck/>
-      </button>
-      <button className="trash-btn">
-        <MdDeleteOutline/>
-      </button>
-    </div>
-  );
-};
+import  TodoItem  from "./TodoItem.jsx";
 
 const TodoList = ({ todos, setTodos }) => {
   // js 寫在這裡
