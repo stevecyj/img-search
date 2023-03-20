@@ -9,14 +9,22 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
 
   const submitTodo = (event) => {
     event.preventDefault();
-    setTodos([...todos, { text: inputText, completed: false, id: Math.random() * 999 }]);
+    setTodos([
+      ...todos,
+      { text: inputText, completed: false, id: Math.random() * 999 },
+    ]);
 
     setInputText('');
   };
 
   return (
     <form>
-      <input className='todo-input' type='text' value={inputText} onChange={inputTextHandler} />
+      <input
+        className='todo-input'
+        type='text'
+        value={inputText}
+        onChange={inputTextHandler}
+      />
 
       <button type='submit' className='todo-button' onClick={submitTodo}>
         <BiMessageSquareAdd />

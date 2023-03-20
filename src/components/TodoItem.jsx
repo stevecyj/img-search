@@ -21,7 +21,9 @@ export const TodoItem = ({ todos, setTodos, text, todo }) => {
 
   return (
     <div className='todo'>
-      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>{text}</li>
+      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+        {text}
+      </li>
 
       <button className='complete-btn' onClick={completeTodo}>
         <MdCheck />

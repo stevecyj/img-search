@@ -15,7 +15,12 @@ function App() {
     <div className='App'>
       <div className='container'>
         <header>ToDoList</header>
-        <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
+        <Form
+          inputText={inputText}
+          setInputText={setInputText}
+          todos={todos}
+          setTodos={setTodos}
+        />
         <TodoList todos={todos} setTodos={setTodos} />
       </div>
     </div>
