@@ -1,7 +1,7 @@
 import { BiMessageSquareAdd } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
   const inputTextHandler = (event) => {
     console.log(event.target.value);
     setInputText(event.target.value);
@@ -15,6 +15,10 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     ]);
 
     setInputText('');
+  };
+
+  const handleSelect = (e) => {
+    setTab(e.target.value);
   };
 
   return (
@@ -31,7 +35,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
       </button>
 
       <div className='select'>
-        <select name='todos'>
+        <select name='todos' onChange={handleSelect}>
           <option value='all'>全部</option>
           <option value='completed'>已完成</option>
           <option value='uncompleted'>待完成</option>
@@ -46,6 +50,7 @@ Form.propTypes = {
   setInputText: PropTypes.func,
   todos: PropTypes.array,
   setTodos: PropTypes.func,
+  setTab: PropTypes.func,
 };
 
 export default Form;
