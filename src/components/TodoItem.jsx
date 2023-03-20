@@ -19,6 +19,13 @@ export const TodoItem = ({ todos, setTodos, text, todo }) => {
     );
   };
 
+  const deleteTodo = () => {
+    // todos.map((item) => {
+    //   console.log('item', item.id, 'todo', todo.id);
+    // });
+    setTodos(todos.filter((item) => item.id !== todo.id));
+  };
+
   return (
     <div className='todo'>
       <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
@@ -28,7 +35,7 @@ export const TodoItem = ({ todos, setTodos, text, todo }) => {
       <button className='complete-btn' onClick={completeTodo}>
         <MdCheck />
       </button>
-      <button className='trash-btn'>
+      <button className='trash-btn' onClick={deleteTodo}>
         <MdDeleteOutline />
       </button>
     </div>
@@ -39,7 +46,7 @@ TodoItem.propTypes = {
   todos: PropTypes.array,
   setTodos: PropTypes.func,
   text: PropTypes.string,
-  todo: PropTypes.string,
+  todo: PropTypes.object,
 };
 
 export default TodoItem;
