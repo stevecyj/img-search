@@ -1,6 +1,5 @@
 import { BiMessageSquareAdd } from 'react-icons/bi';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react'; // 引入 useEffect 鉤子
 
 const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
   const inputTextHandler = (event) => {
@@ -8,17 +7,12 @@ const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
     setInputText(event.target.value);
   };
 
-  // const keepTodos = () => {
-  //   localStorage.setItem('todos', JSON.stringify(todos));
-  // };
-
   const submitTodo = (event) => {
     event.preventDefault();
     setTodos([
       ...todos,
       { text: inputText, completed: false, id: Math.random() * 999 },
     ]);
-    // keepTodos();
 
     setInputText('');
   };
@@ -26,10 +20,6 @@ const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
   const handleSelect = (e) => {
     setTab(e.target.value);
   };
-
-  useEffect(() => {
-    // keepTodos();
-  }, [todos]); // 以 todos 為依賴
 
   return (
     <form>
