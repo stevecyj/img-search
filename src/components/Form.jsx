@@ -8,9 +8,9 @@ const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
     setInputText(event.target.value);
   };
 
-  const keepTodos = () => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  };
+  // const keepTodos = () => {
+  //   localStorage.setItem('todos', JSON.stringify(todos));
+  // };
 
   const submitTodo = (event) => {
     event.preventDefault();
@@ -18,7 +18,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
       ...todos,
       { text: inputText, completed: false, id: Math.random() * 999 },
     ]);
-    keepTodos();
+    // keepTodos();
 
     setInputText('');
   };
@@ -28,8 +28,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setTab }) => {
   };
 
   useEffect(() => {
-    console.log(todos);
-    keepTodos();
+    // keepTodos();
   }, [todos]); // 以 todos 為依賴
 
   return (
