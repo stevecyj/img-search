@@ -32,7 +32,7 @@ function App() {
   }, [tab, todos]);
 
   useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem('todos') || []);
+    const storedItems = JSON.parse(localStorage.getItem('todos')) || [];
     if (storedItems.length !== 0) {
       setTodos(storedItems);
     }
