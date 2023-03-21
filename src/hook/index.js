@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useFormQuery = () => {
-
-  const [ query, setQuery ] = useState('');
-  const handleSubmit = e => {
+  const [query, setQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const handleSubmit = (e) => {
     e.preventDefault();
     const target = e.target;
     const { form } = Object.fromEntries(new FormData(target));
@@ -14,5 +14,7 @@ export const useFormQuery = () => {
     target.focus();
   };
 
-  return { query, handleSubmit }
+  const handleLoading = (loading) => setIsLoading(loading);
+
+  return { query, handleSubmit, isLoading, handleLoading };
 };
