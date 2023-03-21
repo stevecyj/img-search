@@ -1,22 +1,16 @@
-import {useState} from "react";
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export const Form = () => {
-  const [query,setQuery] = useState('');
-  const handleSubmit = e => {
-    e.preventDefault()
-    const target = e.target;
-    const {form} = Object.fromEntries(new FormData(target));
-    console.log(form);
-    if (form.toString().trim().length === 0) return
-    setQuery(form.toString())
-    target.reset()
-    target.focus()
-  };
-
+const Form = ({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Example: batman" name="form"/>
+      <input type='text' placeholder='Example: batman' name='form' />
       <button>Search</button>
     </form>
   );
 };
+Form.propTypes = {
+  handleSubmit: PropTypes.func,
+};
+
+export { Form };

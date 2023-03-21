@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import {Title} from "@/components/Title.jsx";
-import {Form} from "@/components/Form.jsx";
+import { Title } from "@/components/Title.jsx";
+import { Form } from "@/components/Form.jsx";
+import { useFormQuery } from "@/hook/index.js";
 
 function App() {
+  const { query, handleSubmit } = useFormQuery();
 
   return (
     <div>
-        <Title/>
-        <Form/>
+      <Title/>
+      <Form handleSubmit={handleSubmit}/>
     </div>
   );
 }
