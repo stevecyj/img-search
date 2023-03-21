@@ -1,7 +1,7 @@
 export const Title = () => {
   return (
     <>
-      <header>Search Images</header>
+      <h1>Search Images</h1>
       <hr/>
     </>
   );
