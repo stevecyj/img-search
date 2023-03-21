@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
 
-
 * {
   padding: 0;
   margin: 0;
@@ -48,7 +47,7 @@ hr {
 
 /* card */
 
-.grid>div {
+.grid > div {
   grid-template-rows: 1fr auto;
   margin-bottom: 1.5em;
   break-inside: avoid;
@@ -74,7 +73,7 @@ hr {
   }
 }
 
-.grid>div>img {
+.grid > div > img {
   /* grid-row: 1 / -1;
   grid-column: 1; */
   object-fit: cover;
@@ -86,7 +85,7 @@ hr {
   vertical-align: top;
 }
 
-.grid>div>.hidden {
+.grid > div > .hidden {
   background-color: rgba(0, 0, 0, 0.925);
   position: absolute;
   top: 0;
@@ -103,18 +102,17 @@ hr {
   transition: all .2s ease;
 }
 
-
-.grid>div:hover>.hidden {
+.grid > div:hover > .hidden {
   opacity: 1;
   border-color: rgba(255, 255, 255, 0.825);
 }
 
-.grid>div>.hidden>h4 {
+.grid > div > .hidden > h4 {
   font-weight: normal;
   font-size: 1.3em;
 }
 
-.grid>div>.hidden>b {
+.grid > div > .hidden > b {
   font-size: 1.5em;
 }
 
@@ -125,7 +123,7 @@ hr {
   font-size: 1.4em;
 }
 
-.no-results>b {
+.no-results > b {
   color: rgb(205, 90, 199);
 }
 
@@ -139,7 +137,7 @@ form {
   gap: 1em;
 }
 
-form>input {
+form > input {
   font-size: 1.7em;
   padding: .7em;
   border-radius: 15px;
@@ -150,12 +148,11 @@ form>input {
   background: #f2f2f2;
 }
 
-form>input:focus {
+form > input:focus {
   outline-color: slateblue;
 }
 
-
-form>button {
+form > button {
   border-radius: 15px;
   width: fit-content;
   padding: 1em;
@@ -169,11 +166,11 @@ form>button {
   transform: scale(1)
 }
 
-form>button:hover {
+form > button:hover {
   background: rgb(92, 78, 185);
 }
 
-form>button:active {
+form > button:active {
   transform: scale(.9);
 }
 
@@ -193,7 +190,7 @@ form>button:active {
     column-count: 2;
   }
 
-  form>button {
+  form > button {
     padding: .5em;
     font-size: 1.2em;
     width: 100%;
@@ -221,7 +218,7 @@ form>button:active {
   gap: 1em;
 }
 
-.loading>span {
+.loading > span {
   color: white;
   font-size: 1.54em;
 }
